@@ -28,6 +28,6 @@ test('a lei with less than 20 chars is invalid', function () {
 });
 
 test('a lei with more than 20 chars is invalid', function () {
-    $lei = $this->lei . '1';
+    $lei = $this->lei.'1';
     expect($this->leiGenerator->validate($lei))->toBeFalse();
 });
