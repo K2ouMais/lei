@@ -45,6 +45,10 @@ final class Lei
 
         $validate = $this->convert($genericLei.str_pad($calculatedChecksum, 2, '0'));
 
+        if ($validate['checksum'] !== 1) {
+            $this->generate();
+        }
+
         return $validate['unconverted'];
     }
 
