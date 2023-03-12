@@ -1,3 +1,5 @@
 # Changelog
 
-All notable changes to `lei` will be documented in this file.
+## 1.0.1
+- LEIs with more or less than 20 chars should be invalid.
+- Add tests for LEI length.
