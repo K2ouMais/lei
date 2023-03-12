@@ -78,6 +78,12 @@ final class Lei
 
     public function validate(string $lei): bool
     {
+        $leiLength = strlen($lei);
+
+        if ($leiLength < 20 || $leiLength > 20) {
+            return false;
+        }
+
         return $this->convert($lei)['checksum'] === 1;
     }
 }
