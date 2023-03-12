@@ -18,5 +18,5 @@ test('a lei can be validated', function () {
 });
 
 test('a lei is invalid', function () {
-    expect($this->leiGenerator->validate("12340013KCVCMU58YY44"))->toBeFalse();
+    expect($this->leiGenerator->validate('12340013KCVCMU58YY44'))->toBeFalse();
 });
