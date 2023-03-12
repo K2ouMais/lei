@@ -43,7 +43,7 @@ final class Lei
 
         $calculatedChecksum = (98 - $this->convert($genericLei.self::INITIAL_CHECKSUM)['checksum']);
 
-        $validate = $this->convert($genericLei.str_pad($calculatedChecksum, 2, '0'));
+        $validate = $this->convert($genericLei.str_pad($calculatedChecksum, 2, '0', STR_PAD_LEFT));
 
         if ($validate['checksum'] !== 1) {
             $this->generate();
