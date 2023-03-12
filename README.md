@@ -49,7 +49,7 @@ return [
 
 ```php
 
-$lei = new K2ouMais\Lei();
+$lei = new K2ouMais\Lei\Lei();
 
 // Generate a LEI
 $generatedLei = $lei->generate();   // 123400V9I8UWAKBIWH79
