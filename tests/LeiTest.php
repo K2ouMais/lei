@@ -21,3 +21,13 @@ test('a lei can be validated', function () {
 test('a lei is invalid', function () {
     expect($this->leiGenerator->validate('12340013KCVCMU58YY44'))->toBeFalse();
 });
+
+test('a lei with less than 20 chars is invalid', function () {
+    $lei = substr($this->lei, 0, 19);
+    expect($this->leiGenerator->validate($lei))->toBeFalse();
+});
+
+test('a lei with more than 20 chars is invalid', function () {
+    $lei = $this->lei . '1';
+    expect($this->leiGenerator->validate($lei))->toBeFalse();
+});
