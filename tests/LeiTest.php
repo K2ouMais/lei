@@ -9,7 +9,8 @@ beforeEach(function () {
 
 test('a lei can be generated', function () {
     expect($this->lei)
-        ->toBeString();
+        ->toBeString()
+        ->toHaveLength(20);
 });
 
 test('a lei can be validated', function () {
