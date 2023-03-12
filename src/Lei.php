@@ -39,7 +39,7 @@ final class Lei
 
     public function generate(): string
     {
-        $genericLei = config('lei.lou_code').config('lei.reserved').$this->randomize();
+        $genericLei = config('lei.lou_code').config('lei.reserved').$this->entityIdentification();
 
         $calculatedChecksum = (98 - $this->convert($genericLei.self::INITIAL_CHECKSUM)['checksum']);
 
@@ -52,10 +52,12 @@ final class Lei
         return $validate['unconverted'];
     }
 
-    private function randomize(): string
+    private function entityIdentification(): string
     {
         $lettersAndNumbers = array_merge(array_keys($this->letters), $this->numbers);
+
         $lettersAndNumbersLength = count($lettersAndNumbers) - 1;
+
         $genericString = '';
 
         for ($i = 1; $i <= 12; $i++) {
