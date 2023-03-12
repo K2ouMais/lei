@@ -1,19 +1,6 @@
 # LEI generator and validator
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/k2oumais/lei.svg?style=flat-square)](https://packagist.org/packages/k2oumais/lei)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/k2oumais/lei/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/k2oumais/lei/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/k2oumais/lei/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/k2oumais/lei/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/k2oumais/lei.svg?style=flat-square)](https://packagist.org/packages/k2oumais/lei)
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/lei.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/lei)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+A package to generate and validate a LEI (Legal Entity Identifier).
 
 ## Installation
 
@@ -61,8 +48,15 @@ return [
 ## Usage
 
 ```php
+
 $lei = new K2ouMais\Lei();
-echo $lei->generate();
+
+// Generate a LEI
+$generatedLei = $lei->generate();   // 123400V9I8UWAKBIWH79
+
+// Validate a LEI
+$validateLei = $lei->validate('123400V9I8UWAKBIWH79');  // true 
+$validateLei = $lei->validate('12340013KCVCMU58YY44');  // false
 ```
 
 ## Testing
